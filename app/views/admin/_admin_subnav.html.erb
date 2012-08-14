@@ -1,0 +1,4 @@
+<ul class="nav nav-list">
+  <li class="nav-header">Administration</li>
+  <li<% if controller_name == 'users' and action_name != 'new' %> class="active"<% end %>><%= link_to 'Benutzer', admin_users_path %></li>
+</ul>

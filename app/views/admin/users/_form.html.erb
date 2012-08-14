@@ -1,0 +1,30 @@
+<% @user.errors.full_messages.each do |msg| %>
+<div class="alert alert-error"><%= msg %></div>
+<% end %>
+
+<fieldset>
+  <div class="control-group">
+    <%= t.label :username, 'Benutzer-Name', :class => 'control-label' %>
+    <div class="controls"><%= t.text_field :username %></div>
+  </div>
+
+  <div class="control-group">
+    <%= t.label :display_name, 'Name', :class => 'control-label' %>
+    <div class="controls"><%= t.text_field :display_name %></div>
+  </div>
+
+  <div class="control-group">
+    <%= t.label :email, :class => 'control-label' %>
+    <div class="controls"><%= t.text_field :email %></div>
+  </div>
+
+  <div class="control-group">
+    <%= t.label :password, 'Passwort', :class => 'control-label' %>
+    <div class="controls"><%= t.password_field :password %></div>
+  </div>
+
+  <div class="control-group">
+    <%= t.label :password_confirm, 'Passwort-Bestätigung', :class => 'control-label' %>
+    <div class="controls"><%= t.password_field :password_confirmation %></div>
+  </div>
+</fieldset>

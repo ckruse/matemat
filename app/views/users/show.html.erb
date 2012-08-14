@@ -1,0 +1,56 @@
+<h1><%= @user.display_name %></h1>
+
+<p>Guthaben: <span id="account-sum"><%= sprintf("%.2f", @account.sum.to_f) %></span> CHF</p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Produkt</th>
+      <th>Preis CHF</th>
+      <th>Preis EUR</th>
+      <th>Gekauft</th>
+      <th> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+    <tr data-product-id="<%= product.product_id %>">
+      <td><%= link_to product.name, bookings_path(user_id: @user.user_id, product: product.product_id), :class => 'book' %></td>
+      <td class="price-chf" data-chf="<%= product.price_chf %>"><%= product.price_chf %> CHF</td>
+      <td><%= product.price_eur %> EUR</td>
+      <td class="count"><%= product.cnt %></td>
+      <td><%= link_to bookings_path(user_id: @user.user_id, product_id: product.product_id), :class => 'book' do %><i class="icon-plus"> </i><% end %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p class="form-actions">
+  <a href="<%= root_url %>" class="btn btn-primary">Fertig</a>
+</p>
+
+<script>
+var user = <%== @user.to_json %>;
+
+$(".book").click(function(ev) {
+  ev.preventDefault();
+
+  var $tr = $(this).closest("tr");
+  var product_id = $tr.attr('data-product-id');
+
+  $.post(
+    baseUrl + '/bookings',
+    'product_id=' + encodeURIComponent(product_id) + "&user_id=" + encodeURIComponent(user.user_id),
+    function() {
+      $tr.find("td").effect("highlight", {}, 1500);
+
+      var cnt = $tr.find(".count");
+      cnt.text(cnt.text() * 1 + 1);
+      var chf = $tr.find(".price-chf").attr("data-chf") * 1
+
+      $("#account-sum").text($("#account-sum").text() * 1 - chf);
+    }
+  )
+})
+</script>
