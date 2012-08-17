@@ -7,6 +7,10 @@ class Product < ActiveRecord::Base
     :price_eur
 
   has_many :bookings
+
+  validates :name, presence: true, length: {in: 3..50}
+  validates :price_chf, presence: true, numericality: true
+  validates :price_eur, presence: true, numericality: true
 end
 
 # eof
