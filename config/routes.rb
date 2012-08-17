@@ -1,5 +1,5 @@
 Matemat::Application.routes.draw do
-  resources :users, :products, :accounts, :user_sessions
+  resources :users, :user_sessions
 
   namespace :admin do
     resources :products
