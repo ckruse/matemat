@@ -60,6 +60,9 @@ de:
     bno: Bu-Nr
     price: Preis
     sum: Summe
+    password: Passwort
+    password_confirm: Passwort-Bestätigung
+    value: Betrag
 
 
   date:

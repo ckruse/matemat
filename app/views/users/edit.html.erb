@@ -3,12 +3,12 @@
 <%= form_for @user, html: {:class => 'form-horizontal'} do |t| %>
 
 <div class="control-group">
-  <%= t.label :password, :class => 'control-label' %>
+  <%= t.label :password, t("views.password"), :class => 'control-label' %>
   <div class="controls"><%= t.password_field :password %></div>
 </div>
 
 <div class="control-group">
-  <%= t.label :password_confirmation, :class => 'control-label' %>
+  <%= t.label :password_confirmation, t("views.password_confirm"), :class => 'control-label' %>
   <div class="controls"><%= t.password_field :password_confirmation %></div>
 </div>
 

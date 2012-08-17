@@ -4,32 +4,32 @@
 
 <fieldset>
   <div class="control-group">
-    <%= t.label :username, :class => 'control-label' %>
+    <%= t.label :username, t('views.username'), :class => 'control-label' %>
     <div class="controls"><%= t.text_field :username %></div>
   </div>
 
   <div class="control-group">
-    <%= t.label :display_name, :class => 'control-label' %>
+    <%= t.label :display_name, t("views.name"), :class => 'control-label' %>
     <div class="controls"><%= t.text_field :display_name %></div>
   </div>
 
   <div class="control-group">
-    <%= t.label :email, :class => 'control-label' %>
+    <%= t.label :email, t("views.email"), :class => 'control-label' %>
     <div class="controls"><%= t.text_field :email %></div>
   </div>
 
   <div class="control-group">
-    <%= t.label :admin, :class => 'control-label' %>
+    <%= t.label :admin, t("views.administrator"), :class => 'control-label' %>
     <div class="controls"><%= t.check_box :admin %></div>
   </div>
 
   <div class="control-group">
-    <%= t.label :password, :class => 'control-label' %>
+    <%= t.label :password, t("views.password"), :class => 'control-label' %>
     <div class="controls"><%= t.password_field :password %></div>
   </div>
 
   <div class="control-group">
-    <%= t.label :password_confirm, :class => 'control-label' %>
+    <%= t.label :password_confirm, t("views.password_confirm"), :class => 'control-label' %>
     <div class="controls"><%= t.password_field :password_confirmation %></div>
   </div>
 </fieldset>

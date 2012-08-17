@@ -62,6 +62,9 @@ en:
     bno: B. no.
     price: Price
     sum: Sum
+    password: Password
+    password_confirm: Password confirmation
+    value: Value
 
 
 # eof
