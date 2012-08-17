@@ -2,4 +2,26 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+
+  admin:
+    users:
+      successfully_created: User has successfully been created!
+      successfully_updated: User has successfully been updated!
+      successfully_deleted: User has successfully been deleted!
+
+      bookings:
+        successfully_deleted: Booking has successfully been deleted!
+        successfully_created: Booking has successfully been created!
+
+    products:
+      successfully_created: Product has successfully been created!
+      successfully_updated: Product has successfully been updated!
+      successfully_deleted: Product has successfully been deleted!
+
+  user_sessions:
+    login_success: Successfully logged in!
+
+
+
+
+# eof
