@@ -1,0 +1,31 @@
+<%
+
+prods = [['', '']] + @products.map { |p| [p.name, p.product_id] }
+
+@booking.errors.full_messages.each do |msg| %>
+<div class="alert alert-error"><%= msg %></div>
+<% end %>
+
+<div class="control-group">
+  <%= t.label :product, :class => 'control-label' %>
+  <div class="controls">
+    <%= t.select :product_id, options_for_select(prods) %>
+  </div>
+</div>
+
+<div class="control-group">
+  <label for="amount" class="control-label">Anzahl (falls Produkt)</label>
+  <div class="controls"><input type="text" name="amount" id="amount" value="<%= params[:amount] %>"></div>
+</div>
+
+<div class="control-group">
+  <%= t.label :value, 'Betrag', :class => 'control-label' %>
+  <div class="controls">
+    <%= t.text_field :value %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <input type="submit" class="btn btn-primary" value="Speicher">
+  <a href="<%= admin_user_path(@user) %>" class="btn">Abbrechen</a>
+</div>

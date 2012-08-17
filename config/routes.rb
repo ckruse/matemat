@@ -2,8 +2,10 @@ Matemat::Application.routes.draw do
   resources :users, :products, :accounts, :user_sessions
 
   namespace :admin do
-    resources :users
     resources :products
+    resources :users do
+      resources :bookings
+    end
   end
 
   match 'login' => 'user_sessions#new', :as => :login
