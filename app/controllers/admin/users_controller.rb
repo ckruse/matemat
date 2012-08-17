@@ -17,6 +17,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @account = Account.includes(:bookings).find_by_user_id @user.user_id
   end
 
   def new
