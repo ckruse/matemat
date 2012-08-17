@@ -19,6 +19,11 @@
   </div>
 
   <div class="control-group">
+    <%= t.label :admin, 'Administrator', :class => 'control-label' %>
+    <div class="controls"><%= t.check_box :admin %></div>
+  </div>
+
+  <div class="control-group">
     <%= t.label :password, 'Passwort', :class => 'control-label' %>
     <div class="controls"><%= t.password_field :password %></div>
   </div>

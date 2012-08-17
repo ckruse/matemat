@@ -14,13 +14,16 @@
       <th>E-Mail</th>
       <td><%= @user.email %></td>
 
-      <th>Erstellt</th>
-      <td><%= l(@user.created_at, format: "%d. %B %Y %d.%m.%Y") %></td>
+      <th>Administrator</th>
+      <td><%= @user.admin ? 'Ja' : 'Nein' %></td>
     </tr>
 
     <tr>
+      <th>Erstellt</th>
+      <td><%= l(@user.created_at, format: "%d. %B %Y %d.%m.%Y") %></td>
+
       <th>Geändert</th>
-      <td colspan="3"><%= l(@user.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
+      <td><%= l(@user.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
     </tr>
   </tbody>
 </table>
