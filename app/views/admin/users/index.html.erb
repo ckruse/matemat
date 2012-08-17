@@ -14,7 +14,7 @@
       <td><%= @activities[user.account.account_id] ? localize(@activities[user.account.account_id], format: "%d. %B %Y %H:%M") : t("views.never") %></td>
       <td>
         <%= link_to edit_admin_user_path(user) do %><i class="icon-edit"> </i><% end %>
-        <%= link_to admin_user_path(user), :data => { confirm: t("are_you_sure") }, :method => :delete do %><i class="icon-trash"> </i><% end %>
+        <%= link_to admin_user_path(user), :data => { confirm: t("views.are_you_sure") }, :method => :delete do %><i class="icon-trash"> </i><% end %>
       </td>
     </tr>
     <% end %>
