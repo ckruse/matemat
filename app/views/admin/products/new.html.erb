@@ -1,0 +1,12 @@
+<h1>Neues Produkt</h1>
+
+<%= form_for @product, url: admin_products_path, html: {:class => 'form-horizontal'} do |t| %>
+
+<%= render 'form', t: t %>
+
+<div class="form-actions">
+  <input type="submit" value="Speichern" class="btn btn-primary">
+  <a href="<%= admin_products_url %>" class="btn">Abbrechen</a>
+</div>
+
+<% end %>

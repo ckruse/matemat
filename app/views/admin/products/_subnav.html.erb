@@ -1,0 +1,8 @@
+<div class="well sidebar-nav">
+  <%# if current_user.can? :root %><%= render 'admin/admin_subnav' %><%# end %>
+
+  <ul class="nav nav-list">
+    <li class="nav-header">Produktverwaltung</li>
+    <%# if current_user.can? :root %><li<% if action_name == "new" %> class="active"<% end %>><%= link_to new_admin_product_path do %>Neues Produkt<% end %></li><%# end %>
+  </ul>
+</div>

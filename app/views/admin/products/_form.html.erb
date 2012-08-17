@@ -1,0 +1,18 @@
+<% @product.errors.full_messages.each do |msg| %>
+<div class="alert alert-error"><%= msg %></div>
+<% end %>
+
+<div class="control-group">
+  <%= t.label :name, :class => 'control-label' %>
+  <div class="controls"><%= t.text_field :name %></div>
+</div>
+
+<div class="control-group">
+  <%= t.label :price_chf, :class => 'control-label' %>
+  <div class="controls"><%= t.text_field :price_chf %></div>
+</div>
+
+<div class="control-group">
+  <%= t.label :price_eur, :class => 'control-label' %>
+  <div class="controls"><%= t.text_field :price_eur %></div>
+</div>
