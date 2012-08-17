@@ -7,6 +7,15 @@
 <a class="brand" href="<%= root_url %>">Matemat</a>
 <div class="nav-collapse">
   <ul class="nav">
-    <!-- li><%# link_to('Administration', admin_path) %></li -->
+    <% if current_user %><li<% if controller_path == 'admin/users' %> class="active"<% end %>><%= link_to('Administration', admin_users_path) %></li><% end %>
+  </ul>
+
+  <ul class="nav pull-right">
+    <% if current_user %>
+      <li<% if controller_path == 'users' and @user and @user.user_id == current_user.user_id %> class="active"<% end %>><%= link_to current_user.display_name, user_path(current_user) %></li>
+      <li><%= link_to('Logout', logout_path) %></li>
+    <% else %>
+      <li><%= link_to('Login', login_path) %></li>
+    <% end %>
   </ul>
 </div>
