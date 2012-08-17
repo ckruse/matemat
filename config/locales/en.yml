@@ -4,6 +4,9 @@
 en:
   authorize_first: You may not access this ressource!
 
+  users:
+    password_changed: Password has successfully been changed!
+
   admin:
     users:
       successfully_created: User has successfully been created!

@@ -1,6 +1,9 @@
 de:
   authorize_first: Sie dürfen auf diese Ressource nicht zugreifen!
 
+  users:
+    password_changed: Das Passwort wurde erfolgreich geändert!
+
   admin:
     users:
       successfully_created: Der Nutzer wurde erfolgreich erstellt!

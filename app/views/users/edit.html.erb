@@ -1,0 +1,20 @@
+<h1>Passwort ändern</h1>
+
+<%= form_for @user, html: {:class => 'form-horizontal'} do |t| %>
+
+<div class="control-group">
+  <%= t.label :password, :class => 'control-label' %>
+  <div class="controls"><%= t.password_field :password %></div>
+</div>
+
+<div class="control-group">
+  <%= t.label :password_confirmation, :class => 'control-label' %>
+  <div class="controls"><%= t.password_field :password_confirmation %></div>
+</div>
+
+<div class="form-actions">
+  <input type="submit" value="Ändern" class="btn btn-primary">
+  <a href="<%= root_url %>" class="btn">Abbrechen</a>
+</div>
+
+<% end %>

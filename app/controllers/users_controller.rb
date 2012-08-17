@@ -28,6 +28,27 @@ class UsersController < ApplicationController
       find :all
 
   end
+
+  def edit
+    @user = User.find params[:id]
+    redirect_to(root_url, alert: I18n.t('authorize_first')) if current_user.blank? or current_user.user_id != @user.user_id
+  end
+
+  def update
+    @user = User.find params[:id]
+    redirect_to(root_url, alert: I18n.t('authorize_first')) if current_user.blank? or current_user.user_id != @user.user_id
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to root_url, notice: I18n.t('users.password_changed') }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
 
 # eof
