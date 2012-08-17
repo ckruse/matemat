@@ -34,7 +34,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if saved
-        format.html { redirect_to admin_user_url(@user), notice: I18n.t('admin.user.successfully_created') }
+        format.html { redirect_to admin_user_url(@user), notice: I18n.t('admin.users.successfully_created') }
         format.json { render json: @user, :status => :created, location: @user }
       else
         format.html { render action: "new" }
@@ -57,7 +57,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if has_saved
-        format.html { redirect_to edit_admin_user_url(@user), notice: I18n.t('admin.user.successfully_updated') }
+        format.html { redirect_to admin_user_url(@user), notice: I18n.t('admin.users.successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,7 +72,7 @@ class Admin::UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_users_url, notice: I18n.t('admin.group.successfully_deleted') }
+      format.html { redirect_to admin_users_url, notice: I18n.t('admin.users.successfully_deleted') }
       format.json { head :no_content }
     end
   end
