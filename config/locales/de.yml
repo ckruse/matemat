@@ -1,5 +1,5 @@
 de:
-  login_first: Please login first!
+  login_first: Bitte loggen Sie sich erst ein!
   authorize_first: Sie dürfen auf diese Ressource nicht zugreifen!
 
   users:
@@ -24,6 +24,42 @@ de:
   user_sessions:
     login_success: Erfolgreich eingeloggt!
 
+
+  views:
+    name: Name
+    saldo: Saldo
+    last_activity: Letzte Aktivität
+    product: Produkt
+    price_chf: Preis CHF
+    price_eur: Preis EUR
+    bought: Gekauft
+    finished: Fertig
+    update: Ändern
+    cancel: Abbrechen
+    login: Login
+    change_password: Passwort ändern
+    administration: Administration
+    new_booking: Neue Buchung
+    amount_if_product_chosen: Anzahl (falls Produkt gewählt)
+    save: Speichern
+    product_management: Produktverwaltung
+    create_product: Produkt erstellen
+    edit: Bearbeiten
+    created: Erstellt
+    edited: Geändert
+    are_you_sure: Sind Sie sicher?
+    new_product: Neues Produkt
+    back: Zurück
+    user_management: Benutzerverwaltung
+    create_user: Benutzer erstellen
+    never: nie
+    username: Benutzername
+    email: E-Mail
+    administrator: Administrator
+    bookings: Buchungen
+    bno: Bu-Nr
+    price: Preis
+    sum: Summe
 
 
   date:
