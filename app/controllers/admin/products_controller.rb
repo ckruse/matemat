@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 class Admin::ProductsController < ApplicationController
-  before_filter :require_login
+  before_filter :require_login, :authorize_admin
 
   def index
     @products = Product.find :all

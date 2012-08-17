@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 class Admin::BookingsController < ApplicationController
-  before_filter :require_login
+  before_filter :require_login, :authorize_admin
 
   def new
     @user = User.find(params[:user_id])
