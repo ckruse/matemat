@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def authorize_admin
     usr = current_user
-    redirect_to(root_url, alert: I18n.t('login_first') if usr.blank?
+    redirect_to(root_url, alert: I18n.t('login_first')) if usr.blank?
     redirect_to(root_url, alert: I18n.t('authorize_first')) if !usr.blank? and !usr.admin
   end
 
