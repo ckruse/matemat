@@ -1,4 +1,5 @@
 de:
+  login_first: Please login first!
   authorize_first: Sie dürfen auf diese Ressource nicht zugreifen!
 
   users:
