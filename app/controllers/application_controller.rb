@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -12,3 +14,5 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: I18n.t('login_first')
   end
 end
+
+# eof
