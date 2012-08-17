@@ -49,14 +49,9 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    has_saved = false
-
-    if (params[:user][:password].to_s.empty? && @user.update_without_password(params[:user])) or @user.update_attributes(params[:user])
-      has_saved = true
-    end
 
     respond_to do |format|
-      if has_saved
+      if @user.update_attributes(params[:user])
         format.html { redirect_to admin_user_url(@user), notice: I18n.t('admin.users.successfully_updated') }
         format.json { head :no_content }
       else
