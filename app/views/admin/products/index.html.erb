@@ -22,7 +22,7 @@
       <td><%= l(p.updated_at, format: "%d. %B %Y %H:%M") %></td>
       <td>
         <%= link_to edit_admin_product_path(p) do %><i class="icon icon-edit"> </i><% end %>
-        <%= link_to admin_product_path(p), :data => { confirm: '<%= t("views.are_you_sure") %>' }, :method => :delete do %><i class="icon-trash"> </i><% end %>
+        <%= link_to admin_product_path(p), :data => { confirm: t("views.are_you_sure") }, :method => :delete do %><i class="icon-trash"> </i><% end %>
       </td>
     </tr>
   <% end %>
