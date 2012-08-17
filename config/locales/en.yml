@@ -27,6 +27,41 @@ en:
     login_success: Successfully logged in!
 
 
+  views:
+    name: Name
+    saldo: Balance
+    last_activity: Last Activity
+    product: Product
+    price_chf: Price CHF
+    price_eur: Price EUR
+    bought: Bought
+    finished: Finished
+    update: Update
+    cancel: Cancel
+    login: Login
+    change_password: Change Password
+    administration: Administration
+    new_booking: New Booking
+    amount_if_product_chosen: Amount (if product chosen)
+    save: Save
+    product_management: Product management
+    create_product: Create product
+    edit: Edit
+    created: Created
+    edited: Edited
+    are_you_sure: Are you sure?
+    new_product: New Product
+    back: Back
+    user_management: User management
+    create_user: Create user
+    never: never
+    username: User name
+    email: Email
+    administrator: Administrator
+    bookings: Bookings
+    bno: B. no.
+    price: Price
+    sum: Sum
 
 
 # eof

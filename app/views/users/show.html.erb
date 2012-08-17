@@ -1,14 +1,14 @@
 <h1><%= @user.display_name %></h1>
 
-<p>Guthaben: <span id="account-sum"><%= sprintf("%.2f", @account.sum.to_f) %></span> CHF</p>
+<p><%= t("views.saldo") %>: <span id="account-sum"><%= sprintf("%.2f", @account.sum.to_f) %></span> CHF</p>
 
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Produkt</th>
-      <th>Preis CHF</th>
-      <th>Preis EUR</th>
-      <th>Gekauft</th>
+      <th><%= t("views.product") %></th>
+      <th><%= t("views.price_chf") %></th>
+      <th><%= t("views.price_eur") %></th>
+      <th><%= t("views.bought") %></th>
       <th> </th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
 </table>
 
 <p class="form-actions">
-  <a href="<%= root_url %>" class="btn btn-primary">Fertig</a>
+  <a href="<%= root_url %>" class="btn btn-primary"><%= t("views.finished") %></a>
 </p>
 
 <script>

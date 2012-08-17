@@ -1,10 +1,11 @@
-<h1>Neuer Benutzer</h1>
+<h1><%= t("views.new_user") %></h1>
 
 <%= form_for @user, :url => admin_users_path(), :html => {:class => 'form-horizontal'} do |t| %>
 <%= render 'form', t: t %>
 
 <div class="form-actions">
-  <input type="submit" class="btn btn-primary" value="Speichern"> <a href="<%= admin_users_path() %>" class="btn">Abbrechen</a>
+  <input type="submit" class="btn btn-primary" value="<%= t("views.save") %>">
+  <a href="<%= admin_users_path() %>" class="btn"><%= t("views.cancel") %></a>
 </div>
 
 <% end %>

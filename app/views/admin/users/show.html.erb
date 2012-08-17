@@ -3,40 +3,40 @@
 <table class="table table-condensed table-striped width40">
   <tbody>
     <tr>
-      <th>Name</th>
+      <th><%= t("views.name") %></th>
       <td><%= @user.display_name %></td>
 
-      <th>Benutzer</th>
+      <th><%= t("views.username") %></th>
       <td><%= @user.username %></td>
     </tr>
 
     <tr>
-      <th>E-Mail</th>
+      <th><%= t("views.email") %></th>
       <td><%= @user.email %></td>
 
-      <th>Administrator</th>
+      <th><%= t("views.administrator") %></th>
       <td><%= @user.admin ? 'Ja' : 'Nein' %></td>
     </tr>
 
     <tr>
-      <th>Erstellt</th>
+      <th><%= t("views.created") %></th>
       <td><%= l(@user.created_at, format: "%d. %B %Y %d.%m.%Y") %></td>
 
-      <th>Geändert</th>
+      <th><%= t("views.edited") %></th>
       <td><%= l(@user.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
     </tr>
   </tbody>
 </table>
 
-<h2 style="clear:both;">Buchungen:</h2>
+<h2><%= t("views.bookings") %>:</h2>
 
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>B-Nr</th>
-      <th>Produkt</th>
-      <th>Preis</th>
-      <th>Datum</th>
+      <th><%= t("views.bno") %></th>
+      <th><%= t("views.product") %></th>
+      <th><%= t("views.price") %></th>
+      <th><%= t("views.created") %></th>
       <th> </th>
     </tr>
   <thead>
@@ -52,7 +52,7 @@
       <td><%= b.value %></td>
       <td><%= l(b.created_at, format: "%d. %B %Y %H:%M") %></td>
       <td>
-        <%= link_to admin_user_booking_path(@user, b), :data => { confirm: 'Sind Sie sicher?' }, :method => :delete do %><i class="icon icon-trash"> </i><% end %>
+        <%= link_to admin_user_booking_path(@user, b), :data => { confirm: t("views.are_you_sure") }, :method => :delete do %><i class="icon icon-trash"> </i><% end %>
       </td>
     </tr>
     <% end %>
@@ -60,7 +60,7 @@
 
   <tfoot>
     <tr>
-      <th colspan="2">Summe</td>
+      <th colspan="2"><%= t("views.sum") %></td>
       <th colspan="2"><%= sum %></td>
       <th><%= link_to new_admin_user_booking_path(@user) do %><i class="icon icon-plus"> </i></a><% end %></th>
     </tr>
@@ -68,6 +68,6 @@
 </table>
 
 <div class="form-actions">
-  <a href="<%= edit_admin_user_path(@user) %>" class="btn">Bearbeiten</a>
-  <a href="<%= admin_users_path() %>" class="btn">Zurück</a>
+  <a href="<%= edit_admin_user_path(@user) %>" class="btn"><%= t("views.edit") %></a>
+  <a href="<%= admin_users_path() %>" class="btn"><%= t("views.back") %></a>
 </div>

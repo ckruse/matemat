@@ -3,11 +3,11 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Produkt</th>
-      <th>Preis CHF</th>
-      <th>Preis EUR</th>
-      <th>Erstellt</th>
-      <th>Geändert</th>
+      <th><%= t("views.product") %></th>
+      <th><%= t("views.price_chf") %></th>
+      <th><%= t("views.price_eur") %></th>
+      <th><%= t("views.created") %></th>
+      <th><%= t("views.edited") %></th>
       <th> </th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
       <td><%= l(p.updated_at, format: "%d. %B %Y %H:%M") %></td>
       <td>
         <%= link_to edit_admin_product_path(p) do %><i class="icon icon-edit"> </i><% end %>
-        <%= link_to admin_product_path(p), :data => { confirm: 'Sind Sie sicher?' }, :method => :delete do %><i class="icon-trash"> </i><% end %>
+        <%= link_to admin_product_path(p), :data => { confirm: '<%= t("views.are_you_sure") %>' }, :method => :delete do %><i class="icon-trash"> </i><% end %>
       </td>
     </tr>
   <% end %>

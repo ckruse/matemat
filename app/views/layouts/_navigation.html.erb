@@ -7,7 +7,7 @@
 <a class="brand" href="<%= root_url %>">Matemat</a>
 <div class="nav-collapse">
   <ul class="nav">
-    <% if current_user %><li<% if controller_path == 'admin/users' %> class="active"<% end %>><%= link_to('Administration', admin_users_path) %></li><% end %>
+    <% if current_user %><li<% if controller_path == 'admin/users' %> class="active"<% end %>><%= link_to(t('views.administration'), admin_users_path) %></li><% end %>
   </ul>
 
   <ul class="nav pull-right">

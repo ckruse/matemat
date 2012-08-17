@@ -1,4 +1,4 @@
-<h1>Bearbeiten: <%= @product.name %></h1>
+<h1><%= t("views.edit") %>: <%= @product.name %></h1>
 
 <%= form_for @product, url: admin_product_path(@product), html: {:class => 'form-horizontal'} do |t| %>
 
@@ -6,7 +6,7 @@
 
 <div class="form-actions">
   <input type="submit" value="Speichern" class="btn btn-primary">
-  <a href="<%= admin_product_url(@product) %>" class="btn">Abbrechen</a>
+  <a href="<%= admin_product_url(@product) %>" class="btn"><%= t("views.cancel") %></a>
 </div>
 
 <% end %>

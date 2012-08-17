@@ -4,7 +4,7 @@
 <%= render 'form', t: t %>
 
 <div class="form-actions">
-  <input type="submit" class="btn btn-primary" value="Speichern"> <a href="<%= admin_user_path(@user) %>" class="btn">Abbrechen</a>
+  <input type="submit" class="btn btn-primary" value="<%= t("views.update") %>"> <a href="<%= admin_user_path(@user) %>" class="btn"><%= t("views.cancel") %></a>
 </div>
 
 <% end %>

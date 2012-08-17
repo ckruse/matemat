@@ -14,18 +14,18 @@ prods = [['', '']] + @products.map { |p| [p.name, p.product_id] }
 </div>
 
 <div class="control-group">
-  <label for="amount" class="control-label">Anzahl (falls Produkt)</label>
+  <label for="amount" class="control-label"><%= t("amount_if_product_chosen") %></label>
   <div class="controls"><input type="text" name="amount" id="amount" value="<%= params[:amount] %>"></div>
 </div>
 
 <div class="control-group">
-  <%= t.label :value, 'Betrag', :class => 'control-label' %>
+  <%= t.label :value, :class => 'control-label' %>
   <div class="controls">
     <%= t.text_field :value %>
   </div>
 </div>
 
 <div class="form-actions">
-  <input type="submit" class="btn btn-primary" value="Speicher">
-  <a href="<%= admin_user_path(@user) %>" class="btn">Abbrechen</a>
+  <input type="submit" class="btn btn-primary" value="<%= t("views.save") %>">
+  <a href="<%= admin_user_path(@user) %>" class="btn"><%= t("views.cancel") %></a>
 </div>
