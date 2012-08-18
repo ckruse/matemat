@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(:version => 4) do
   end
 
   create_table "products", :primary_key => "product_id", :force => true do |t|
-    t.string   "name",                                     :null => false
-    t.decimal  "price_chf",  :precision => 8, :scale => 2, :null => false
-    t.decimal  "price_eur",  :precision => 8, :scale => 2, :null => false
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.string   "name",                                                      :null => false
+    t.decimal  "price_int",  :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "price_ext",  :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "deposit",    :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
   end
 
   create_table "users", :primary_key => "user_id", :force => true do |t|

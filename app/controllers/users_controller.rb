@@ -3,7 +3,9 @@
 class UsersController < ApplicationController
   def index
     @users = User.includes(:account).find :all
-    bookings = Booking.select('account_id, SUM(value) AS value, MAX(updated_at) AS last').where('account_id IN (SELECT account_id FROM accounts INNER JOIN users USING(user_id))').group(:account_id)
+    bookings = Booking.
+      select('account_id, SUM(value) AS value, MAX(updated_at) AS last').where('account_id IN (SELECT account_id FROM accounts INNER JOIN users USING(user_id))').
+      group(:account_id)
 
     @bookings = {}
     @activities = {}

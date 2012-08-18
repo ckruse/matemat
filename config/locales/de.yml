@@ -30,8 +30,9 @@ de:
     saldo: Saldo
     last_activity: Letzte Aktivität
     product: Produkt
-    price_chf: Preis CHF
-    price_eur: Preis EUR
+    price_int: Preis intern
+    price_ext: Preis extern
+    deposit: Pfand
     bought: Gekauft
     finished: Fertig
     update: Ändern

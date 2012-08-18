@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
     @booking = Booking.create! account_id: @account.account_id,
       product_id: @product.product_id,
-      value: -@product.price_chf
+      value: -@product.price_int
 
     respond_to do |format|
       format.html { redirect_to user_url(@user), notice: I18n.t('bookings.created') }

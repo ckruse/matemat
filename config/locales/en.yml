@@ -32,8 +32,9 @@ en:
     saldo: Balance
     last_activity: Last Activity
     product: Product
-    price_chf: Price CHF
-    price_eur: Price EUR
+    price_int: Internal price
+    price_eur: External price
+    deposit: deposit
     bought: Bought
     finished: Finished
     update: Update

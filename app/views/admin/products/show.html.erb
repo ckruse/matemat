@@ -6,19 +6,22 @@
       <th><%= t("views.name") %></th>
       <td><%= @product.name %></td>
 
-      <th><%= t("views.price_chf") %></th>
-      <td><%= @product.price_chf %></td>
+      <th><%= t("views.price_int") %></th>
+      <td><%= @product.price_int %></td>
     </tr>
 
     <tr>
-      <th><%= t("views.price_eur") %></th>
-      <td><%= @product.price_eur %></td>
+      <th><%= t("views.price_ext") %></th>
+      <td><%= @product.price_ext %></td>
 
+      <th><%= t("views.deposit") %></th>
+      <td><%= @product.deposit %></td>
+    </tr>
+
+    <tr>
       <th><%= t("views.created") %></th>
       <td><%= l(@product.created_at, format: "%d. %B %Y %d.%m.%Y") %></td>
-    </tr>
 
-    <tr>
       <th><%= t("views.edited") %></th>
       <td colspan="3"><%= l(@product.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
     </tr>

@@ -14,7 +14,7 @@ if %w{development test}.include?(Rails.env)
   end
 
   10.times do |i|
-    Product.create! name: "Produkt #{i}", price_chf: 2.0, price_eur: 1.67
+    Product.create! name: "Produkt #{i}", price_int: 1.0, price_ext: 2, deposit: 0.1
   end
 end
 

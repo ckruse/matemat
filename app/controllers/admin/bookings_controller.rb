@@ -20,7 +20,7 @@ class Admin::BookingsController < ApplicationController
 
     if params[:amount] and @booking.product_id
       product = Product.find @booking.product_id
-      @booking.value = -(params[:amount].to_i * product.price_chf)
+      @booking.value = -(params[:amount].to_i * product.price_int)
     end
 
     respond_to do |format|

@@ -4,8 +4,9 @@
   <thead>
     <tr>
       <th><%= t("views.product") %></th>
-      <th><%= t("views.price_chf") %></th>
-      <th><%= t("views.price_eur") %></th>
+      <th><%= t("views.price_int") %></th>
+      <th><%= t("views.price_ext") %></th>
+      <th><%= t("views.deposit") %></th>
       <th><%= t("views.created") %></th>
       <th><%= t("views.edited") %></th>
       <th> </th>
@@ -16,8 +17,9 @@
   <% @products.each do |p| %>
     <tr>
       <td><%= link_to p.name, admin_product_path(p) %></td>
-      <td><%= p.price_chf %> CHF</td>
-      <td><%= p.price_eur %> EUR</td>
+      <td><%= p.price_int %></td>
+      <td><%= p.price_ext %></td>
+      <td><%= p.deposit %></td>
       <td><%= l(p.created_at, format: "%d. %B %Y %H:%M") %></td>
       <td><%= l(p.updated_at, format: "%d. %B %Y %H:%M") %></td>
       <td>

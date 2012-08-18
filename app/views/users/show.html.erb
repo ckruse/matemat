@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= t("views.product") %></th>
-      <th><%= t("views.price_chf") %></th>
-      <th><%= t("views.price_eur") %></th>
+      <th><%= t("views.price_int") %></th>
+      <th><%= t("views.price_ext") %></th>
       <th><%= t("views.bought") %></th>
       <th> </th>
     </tr>
@@ -17,8 +17,8 @@
     <% @products.each do |product| %>
     <tr data-product-id="<%= product.product_id %>">
       <td><%= link_to product.name, bookings_path(user_id: @user.user_id, product: product.product_id), :class => 'book' %></td>
-      <td class="price-chf" data-chf="<%= product.price_chf %>"><%= product.price_chf %> CHF</td>
-      <td><%= product.price_eur %> EUR</td>
+      <td class="price-chf" data-chf="<%= product.price_int %>"><%= product.price_int %></td>
+      <td><%= product.price_ext %></td>
       <td class="count"><%= product.cnt %></td>
       <td><%= link_to bookings_path(user_id: @user.user_id, product_id: product.product_id), :class => 'book' do %><i class="icon-plus"> </i><% end %></td>
     </tr>
