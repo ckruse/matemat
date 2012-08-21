@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :user_id, :username, :display_name,
     :email, :created_at, :updated_at, :password, :admin,
-    :password_confirmation
+    :is_member, :password_confirmation
 
   has_one :account, :dependent => :destroy
 

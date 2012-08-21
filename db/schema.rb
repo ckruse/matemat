@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "accounts", :primary_key => "account_id", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -36,7 +36,8 @@ ActiveRecord::Schema.define(:version => 4) do
     t.datetime "updated_at",                                                :null => false
   end
 
-  create_table "users", :primary_key => "user_id", :force => true do |t|
+  create_table "users", :id => false, :force => true do |t|
+    t.integer  "user_id"
     t.string   "username",                            :null => false
     t.string   "display_name",                        :null => false
     t.string   "email",                               :null => false
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 4) do
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
     t.boolean  "admin",            :default => false
+    t.boolean  "is_member",        :default => true
   end
 
 end

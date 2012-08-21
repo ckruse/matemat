@@ -1,20 +1,14 @@
 <h1><%= t("views.change_passwort") %></h1>
 
+<% @user.errors.full_messages.each do |msg| %>
+<div class="alert alert-error"><%= msg %></div>
+<% end %>
+
 <%= form_for @user, html: {:class => 'form-horizontal'} do |t| %>
 
-<div class="control-group">
-  <%= t.label :password, t("views.password"), :class => 'control-label' %>
-  <div class="controls"><%= t.password_field :password %></div>
-</div>
+<p>
+<%= password_field :user, :password, :class => 'patternlock' %>
+</p>
 
-<div class="control-group">
-  <%= t.label :password_confirmation, t("views.password_confirm"), :class => 'control-label' %>
-  <div class="controls"><%= t.password_field :password_confirmation %></div>
-</div>
-
-<div class="form-actions">
-  <input type="submit" value="<%= t("views.update") %>" class="btn btn-primary">
-  <a href="<%= root_url %>" class="btn"><%= t("views.cancel") %></a>
-</div>
 
 <% end %>

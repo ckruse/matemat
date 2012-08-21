@@ -1,4 +1,7 @@
 Matemat::Application.routes.draw do
+  get '/users/login' => 'users#touch_login', :as => :touch_login
+  post '/users/login' => 'users#do_touch_login', :as => :touch_login
+
   resources :users, :user_sessions
 
   namespace :admin do

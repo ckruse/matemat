@@ -17,8 +17,8 @@
     <% @products.each do |product| %>
     <tr data-product-id="<%= product.product_id %>">
       <td><%= link_to product.name, bookings_path(user_id: @user.user_id, product: product.product_id), :class => 'book' %></td>
-      <td class="price-chf" data-chf="<%= product.price_int %>"><%= product.price_int %></td>
-      <td><%= product.price_ext %></td>
+      <td class="price-int" data-price="<%= product.price_int %>"><%= product.price_int %></td>
+      <td class="price-ext" data-price="<%= product.price_ext %>"><%= product.price_ext %></td>
       <td class="count"><%= product.cnt %></td>
       <td><%= link_to bookings_path(user_id: @user.user_id, product_id: product.product_id), :class => 'book' do %><i class="icon-plus"> </i><% end %></td>
     </tr>
@@ -27,7 +27,7 @@
 </table>
 
 <p class="form-actions">
-  <a href="<%= root_url %>" class="btn btn-primary"><%= t("views.finished") %></a>
+  <a href="<%= logout_path %>" class="btn btn-primary"><%= t("views.finished") %></a>
 </p>
 
 <script>
@@ -47,9 +47,9 @@ $(".book").click(function(ev) {
 
       var cnt = $tr.find(".count");
       cnt.text(cnt.text() * 1 + 1);
-      var chf = $tr.find(".price-chf").attr("data-chf") * 1
+      var price = $tr.find(user.is_member ? ".price-int" : ".price-ext").attr("data-price") * 1
 
-      $("#account-sum").text($("#account-sum").text() * 1 - chf);
+      $("#account-sum").text($("#account-sum").text() * 1 - price);
     }
   )
 })

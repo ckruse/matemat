@@ -1,6 +1,21 @@
 # -*- encoding: utf-8 -*-
 
 class UsersController < ApplicationController
+  before_filter :require_login, only: [:edit, :update]
+
+  def touch_login
+    @user = User.find params[:id]
+  end
+
+  def do_touch_login
+    if @user = login(params[:username], params[:password])
+      redirect_to user_url(@user)
+    else
+      @user = User.find_by_username params[:username]
+      render :touch_login
+    end
+  end
+
   def index
     @users = User.includes(:account).find :all
     bookings = Booking.
@@ -16,6 +31,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless current_user
+      redirect_to touch_login_url(id: params[:id]), alert: I18n.t('login_first')
+      return
+    end
+
     @user = User.find params[:id]
     @account = Account.
       select('accounts.*, SUM(value) AS sum').
@@ -40,8 +60,10 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     redirect_to(root_url, alert: I18n.t('authorize_first')) if current_user.blank? or current_user.user_id != @user.user_id
 
+    @user.password = params[:user][:password]
+
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.save
         format.html { redirect_to root_url, notice: I18n.t('users.password_changed') }
         format.json { head :no_content }
       else

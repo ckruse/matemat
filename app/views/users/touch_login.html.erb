@@ -1,0 +1,6 @@
+<h1>Login <%= @user.display_name %></h1>
+
+<%= form_tag touch_login_url do %>
+<input type="hidden" name="username" value="<%= @user.username %>">
+<input type="password" name="password" class="patternlock">
+<% end %>
