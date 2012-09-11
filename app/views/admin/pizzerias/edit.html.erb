@@ -1,0 +1,12 @@
+<h1>Pizzeria bearbeiten: <%= @pizzeria.name %></h1>
+
+<%= form_for @pizzeria, url: admin_pizzeria_path(@pizzeria), html: {:class => 'form-horizontal'} do |t| %>
+
+<%= render 'form', t: t %>
+
+<div class="form-actions">
+  <input type="submit" value="<%= t("views.save") %>" class="btn btn-primary">
+  <a href="<%= admin_pizzeria_url(@pizzeria) %>" class="btn"><%= t("views.cancel") %></a>
+</div>
+
+<% end %>

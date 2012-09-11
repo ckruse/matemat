@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 5) do
+ActiveRecord::Schema.define(:version => 6) do
 
   create_table "accounts", :primary_key => "account_id", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -25,6 +25,36 @@ ActiveRecord::Schema.define(:version => 5) do
     t.decimal  "value",      :precision => 8, :scale => 2, :null => false
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
+  end
+
+  create_table "order_positions", :primary_key => "position_id", :force => true do |t|
+    t.string   "name"
+    t.decimal  "price",      :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.boolean  "paid",                                     :default => false, :null => false
+    t.integer  "order_id"
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
+  end
+
+  create_table "orders", :primary_key => "order_id", :force => true do |t|
+    t.integer  "pizzeria_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "pizzas", :primary_key => "pizza_id", :force => true do |t|
+    t.integer "pizzeria_id",                                                :null => false
+    t.string  "name",                                                       :null => false
+    t.decimal "price",       :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.string  "ingredients"
+  end
+
+  create_table "pizzerias", :primary_key => "pizzeria_id", :force => true do |t|
+    t.string   "name",           :null => false
+    t.string   "business_hours", :null => false
+    t.string   "email"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "products", :primary_key => "product_id", :force => true do |t|

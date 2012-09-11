@@ -2,4 +2,5 @@
   <li class="nav-header">Administration</li>
   <li<% if controller_name == 'users' and action_name != 'new' %> class="active"<% end %>><%= link_to 'Benutzer', admin_users_path %></li>
   <li<% if controller_name == 'products' and action_name != 'new' %> class="active"<% end %>><%= link_to 'Produkte', admin_products_path %></li>
+  <li<% if controller_name == 'pizzerias' and action_name != 'new' %> class="active"<% end %>><%= link_to 'Pizzerien', admin_pizzerias_path %></li>
 </ul>

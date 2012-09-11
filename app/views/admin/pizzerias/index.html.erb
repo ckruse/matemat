@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pizzeria</th>
+      <th>Erstellt</th>
+      <th>Geändert</th>
+      <th> </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pizzerias.each do |p| %>
+    <tr>
+      <td><%= link_to p.pizzeria_id, admin_pizzeria_path(p) %></td>
+      <td><%= link_to p.name, admin_pizzeria_path(p) %></td>
+      <td><%= l(p.created_at) %></td>
+      <td><%= l(p.updated_at) %></td>
+      <td>
+        <%= link_to edit_admin_pizzeria_path(p) do %><i class="icon-edit"> </i><% end %>
+        <%= link_to admin_pizzeria_path(p), :data => { confirm: t("views.are_you_sure") }, :method => :delete do %><i class="icon-trash"> </i><% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>

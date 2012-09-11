@@ -2,12 +2,16 @@ Matemat::Application.routes.draw do
   get '/users/login' => 'users#touch_login', :as => :touch_login
   post '/users/login' => 'users#do_touch_login', :as => :touch_login
 
-  resources :users, :user_sessions
+  resources :users, :user_sessions, :pizzas
 
   namespace :admin do
     resources :products
     resources :users do
       resources :bookings
+    end
+
+    resources :pizzerias do
+      resources :pizzas
     end
   end
 
