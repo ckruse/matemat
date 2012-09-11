@@ -23,7 +23,7 @@
     <%= yield(:head) %>
   </head>
 
-  <body data-controller="<%= controller_path %>" data-action="<%= action_name %>"<% if content_for? :body_id %> id="<%= yield(:body_id) %>"<% end %>>
+  <body data-controller="<%= controller_path %>" data-action="<%= action_name %>"<% if content_for? :body_id %> id="<%= yield(:body_id) %>"<% end %><% if content_for? :body_class %> class="<%= yield(:body_class) %>"<% end %>>
 
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
