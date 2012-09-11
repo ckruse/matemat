@@ -66,6 +66,7 @@ en:
     password: Password
     password_confirm: Password confirmation
     value: Value
+    member: Club member
 
 
 # eof

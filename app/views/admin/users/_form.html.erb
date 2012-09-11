@@ -24,6 +24,11 @@
   </div>
 
   <div class="control-group">
+    <%= t.label :is_member, t("views.member"), :class => 'control-label' %>
+    <div class="controls"><%= t.check_box :is_member %></div>
+  </div>
+
+  <div class="control-group">
     <%= t.label :password, t("views.password"), :class => 'control-label' %>
     <div class="controls"><%= t.password_field :password %></div>
   </div>

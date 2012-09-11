@@ -19,12 +19,18 @@
     </tr>
 
     <tr>
+      <th><%= t("views.member") %></th>
+      <td><%= @user.is_member ? "Ja" : "Nein" %></td>
+
       <th><%= t("views.created") %></th>
       <td><%= l(@user.created_at, format: "%d. %B %Y %d.%m.%Y") %></td>
-
-      <th><%= t("views.edited") %></th>
-      <td><%= l(@user.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
     </tr>
+
+    <tr>
+      <th><%= t("views.edited") %></th>
+      <td colspan="3"><%= l(@user.updated_at, format: "%d. %B %Y %d.%m.%Y") %></td>
+    </tr>
+
   </tbody>
 </table>
 
