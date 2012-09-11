@@ -4,5 +4,6 @@
   <ul class="nav nav-list">
     <li class="nav-header"><%= t("views.pizzerias_management") %></li>
     <li<% if action_name == "new" %> class="active"<% end %>><%= link_to new_admin_pizzeria_path do %><%= t("views.create_pizzeria") %><% end %></li>
+    <% if @pizzeria %><li><%= link_to 'Neue Pizza', new_admin_pizzeria_pizza_path(@pizzeria) %></li><% end %>
   </ul>
 </div>

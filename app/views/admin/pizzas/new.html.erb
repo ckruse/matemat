@@ -1,0 +1,12 @@
+<h1>Neue Pizza (<%= @pizzeria.name %>)</h1>
+
+<%= form_for @pizza, url: admin_pizzeria_pizzas_path(@pizzeria), :html => {:class => 'form-horizontal'} do |t| %>
+
+<%= render 'form', t: t %>
+
+<p class="form-actions">
+  <input type="submit" value="Speichern" class="btn btn-primary">
+  <a href="<%= admin_pizzeria_path(@pizzeria) %>" class="btn">Abbrechen</a>
+</p>
+
+<% end %>
