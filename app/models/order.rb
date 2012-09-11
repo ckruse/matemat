@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
 
   attr_accessible :order_id, :pizzeria_id, :created_at, :updated_at
   has_many :order_positions, :dependent => :destroy
+  belongs_to :pizzeria
 end
 
 # eof
