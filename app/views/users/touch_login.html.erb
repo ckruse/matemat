@@ -1,4 +1,4 @@
-<h1>Login <%= @user.display_name %></h1>
+<% content_for :body_class do %>patternlock<% end %><h1>Login <%= @user.display_name %></h1>
 
 <%= form_tag touch_login_url do %>
 <input type="hidden" name="username" value="<%= @user.username %>">
