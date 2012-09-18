@@ -19,6 +19,7 @@ class AddPizzas < ActiveRecord::Migration
 
     create_table :orders, :primary_key => :order_id do |t|
       t.integer :pizzeria_id, null: false
+      t.boolean :open, default: true, null: false
       t.timestamps
     end
 
@@ -28,6 +29,7 @@ class AddPizzas < ActiveRecord::Migration
       t.boolean :paid, default: false, null: false
 
       t.integer :order_id
+      t.integer :user_id
 
       t.timestamps
     end

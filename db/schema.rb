@@ -32,14 +32,16 @@ ActiveRecord::Schema.define(:version => 6) do
     t.decimal  "price",      :precision => 8, :scale => 2, :default => 0.0,   :null => false
     t.boolean  "paid",                                     :default => false, :null => false
     t.integer  "order_id"
+    t.integer  "user_id"
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
   end
 
   create_table "orders", :primary_key => "order_id", :force => true do |t|
-    t.integer  "pizzeria_id", :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "pizzeria_id",                   :null => false
+    t.boolean  "open",        :default => true, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "pizzas", :primary_key => "pizza_id", :force => true do |t|

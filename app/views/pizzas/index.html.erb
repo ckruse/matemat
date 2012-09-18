@@ -1,0 +1,7 @@
+<h1>Pizza-Bestellungen</h1>
+
+<ul>
+  <% @orders.each do |o| %>
+  <li><%= link_to pizza_path(o) do %><%= l(o.created_at, format: "%A, %d. %m. %Y %H:%M") %><% end %> (<%= o.open ? "Offen" : "Abgeschlossen" %>)
+  <% end %>
+</ul>
