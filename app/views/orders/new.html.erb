@@ -1,0 +1,12 @@
+<h1>Neue Pizza-Bestellung</h1>
+
+<%= form_for @order, url: pizzas_path, html: {:class => 'form-horizontal'} do |t| %>
+
+<%= render 'form', t: t %>
+
+<p class="form-actions">
+  <input type="submit" value="Erstellen" class="btn btn-primary">
+  <%= link_to 'Abbrechen', root_path, :class => 'btn' %>
+</p>
+
+<% end %>

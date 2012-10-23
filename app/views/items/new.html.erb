@@ -1,0 +1,17 @@
+<h1>Pizza-Bestellung vom <%= l(@item.order.created_at, format: "%A, %d. %m. %Y %H:%M") %></h1>
+
+<%= form_for @item, url: order_items_path(@item.order), html: {:class => 'form-horizontal'} do |t| %>
+
+<div class="control-group">
+  <%= t.label :order_id, 'Pizza', :class => 'control-label' %>
+  <div class="controls">
+    <%= t.collection_select :name, @item.order.pizzeria.pizzas, :name, :name %>
+  </div>
+</div>
+
+<p class="form-actions">
+  <input type="submit" value="Bestellen" class="btn btn-primary">
+  <%= link_to 'Abbrechen', order_path(@item.order), :class => 'btn' %>
+</p>
+
+<% end %>

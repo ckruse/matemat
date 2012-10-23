@@ -68,8 +68,7 @@ ActiveRecord::Schema.define(:version => 6) do
     t.datetime "updated_at",                                                :null => false
   end
 
-  create_table "users", :id => false, :force => true do |t|
-    t.integer  "user_id"
+  create_table "users", :primary_key => "user_id", :force => true do |t|
     t.string   "username",                            :null => false
     t.string   "display_name",                        :null => false
     t.string   "email",                               :null => false

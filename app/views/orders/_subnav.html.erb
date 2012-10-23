@@ -1,0 +1,8 @@
+<div class="well sidebar-nav">
+  <ul class="nav nav-list">
+    <li class="nav-header">Bestellungen</li>
+    <% if @order %><li><%= link_to 'Pizza bestellen', new_order_item_path(@order) %></li>
+    <% else %><li><%= link_to 'Neue Bestellung', new_order_path %></li>
+    <% end %>
+  </ul>
+</div>

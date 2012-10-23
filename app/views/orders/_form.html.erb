@@ -1,0 +1,5 @@
+
+<div class="control-group">
+  <%= t.label :pizzeria_id, :class => 'control-label' %>
+  <div class="controls"><%= t.collection_select :pizzeria_id, Pizzeria.all, :id, :name %></div>
+</div>
