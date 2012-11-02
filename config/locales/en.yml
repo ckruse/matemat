@@ -28,6 +28,16 @@ en:
       successfully_updated: Product has successfully been updated!
       successfully_deleted: Product has successfully been deleted!
 
+    pizzeria:
+      successfully_created: Pizzeria was successfully created.
+      successfully_updated: Pizzeria was successfully updated.
+      successfully_deleted: Pizzeria was successfully deleted.
+
+      pizza:
+        successfully_created: Pizza was successfully created.
+        successfully_updated: Pizza was successfully updated.
+        successfully_deleted: Pizza was successfully deleted.
+
   user_sessions:
     login_success: Successfully logged in!
 

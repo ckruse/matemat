@@ -25,6 +25,16 @@ de:
       successfully_updated: Das Produkt wurde erfolgreich geändert!
       successfully_deleted: Das Produkt wurde erfolgreich gelöscht!
 
+    pizzeria:
+      successfully_created: Die Pizzeria wurde erfolgreich erstellt.
+      successfully_updated: Die Pizzeria wurde erfolgreich geändert.
+      successfully_deleted: Die Pizzeria wurde erfolgreich gelöscht.
+
+      pizza:
+        successfully_created: Die Pizza wurde erfolgreich angelegt.
+        successfully_updated: Die Pizza wurde erfolgreich geändert.
+        successfully_deleted: Die Pizza wurde erfolgreich gelöscht.
+
 
   user_sessions:
     login_success: Erfolgreich eingeloggt!
