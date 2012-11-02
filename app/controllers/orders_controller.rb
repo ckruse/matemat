@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_url(@order), notice: 'Order was successfully created.' }
+        format.html { redirect_to order_url(@order), notice: I18n.t('orders.successfully_created') }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to order_url(@order), notice: 'Order was successfully updated.' }
+        format.html { redirect_to order_url(@order), notice: I18n.t('orders.successfully_updated') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -78,7 +78,7 @@ class OrdersController < ApplicationController
     @order.destroy
 
     respond_to do |format|
-      format.html { redirect_to orders_url }
+      format.html { redirect_to orders_url, notice: I18n.t('orders.successfully_deleted') }
       format.json { head :no_content }
     end
   end

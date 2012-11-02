@@ -8,6 +8,11 @@ en:
   users:
     password_changed: Password has successfully been changed!
 
+  orders:
+    successfully_created: Order was successfully created.
+    successfully_updated: Order was successfully updated.
+    successfully_deleted: Order was successfully deleted.
+
   admin:
     users:
       successfully_created: User has successfully been created!

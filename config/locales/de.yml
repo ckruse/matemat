@@ -5,6 +5,11 @@ de:
   users:
     password_changed: Das Passwort wurde erfolgreich geändert!
 
+  orders:
+    successfully_created: Die Bestellung wurde erfolgreich erstellt.
+    successfully_updated: Die Bestellung wurde erfolgreich geändert.
+    successfully_deleted: Die Bestellung wurde erfolgreich gelöscht.
+
   admin:
     users:
       successfully_created: Der Nutzer wurde erfolgreich erstellt!
