@@ -70,6 +70,8 @@ de:
     password_confirm: Passwort-Bestätigung
     value: Betrag
     member: Club-Mitglied
+    create_pizzeria: Pizzeria anlegen
+    create_pizza: Pizza anlegen
 
 
   date:

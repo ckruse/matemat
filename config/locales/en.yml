@@ -72,6 +72,8 @@ en:
     password_confirm: Password confirmation
     value: Value
     member: Club member
+    create_pizzeria: Create Pizzeria
+    create_pizza: Create Pizza
 
 
 # eof
