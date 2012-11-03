@@ -43,6 +43,7 @@ class OrdersController < ApplicationController
   # POST /collections.json
   def create
     @order = Order.new(params[:order])
+    @order.user_id = current_user.user_id
 
     respond_to do |format|
       if @order.save
@@ -79,6 +80,25 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to orders_url, notice: I18n.t('orders.successfully_deleted') }
+      format.json { head :no_content }
+    end
+  end
+
+  def close
+    @order = Order.find params[:id]
+
+    closed = false
+    if @order.user_id == current_user.user_id
+      @order.open = false
+      @order.save
+      closed = true
+    end
+
+    respond_to do |format|
+      format.html { redirect_to order_url(@order), notice: closed ?
+          I18n.t('orders.successfully_closed') :
+          I18n.t('orders.closing_not_allowed')
+      }
       format.json { head :no_content }
     end
   end

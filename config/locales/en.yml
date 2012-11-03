@@ -12,6 +12,14 @@ en:
     successfully_created: Order was successfully created.
     successfully_updated: Order was successfully updated.
     successfully_deleted: Order was successfully deleted.
+    successfully_closed: Order was successfully closed.
+    closing_not_allowed: You are not authorized to close this order!
+
+    pizzas:
+      successfully_created: Pizza order was successfully created.
+      successfully_deleted: Pizza order was successfully deleted.
+      not_allowed_to_delete: You are not authorized to delete this order item!
+      paid: Pizza has successfully been paid.
 
   admin:
     users:
@@ -84,6 +92,8 @@ en:
     member: Club member
     create_pizzeria: Create Pizzeria
     create_pizza: Create Pizza
+    new_order: New Order
+    order_pizza: Order Pizza
 
 
 # eof
