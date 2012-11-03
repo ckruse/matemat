@@ -20,6 +20,7 @@ class AddPizzas < ActiveRecord::Migration
     create_table :orders, :primary_key => :order_id do |t|
       t.integer :pizzeria_id, null: false
       t.boolean :open, default: true, null: false
+      t.integer :user_id, null: false
       t.timestamps
     end
 
