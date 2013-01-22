@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     if @user = login(params[:username], params[:password])
       redirect_to user_url(@user)
     else
+      flash[:error] = 'Falsche Nutzerdaten!'
       @user = User.find_by_username params[:username]
       render :touch_login
     end

@@ -7,7 +7,7 @@
   <tbody>
     <% @users.each do |user| %>
     <tr>
-      <td><%= link_to user.display_name, user_path(user) %></td>
+      <td><%= link_to user.display_name, (not current_user.blank? and current_user.user_id == user.user_id) ? user_path(user) : touch_login_path(id: user.user_id) %></td>
       <td><%= @activities[user.account.account_id] ? localize(@activities[user.account.account_id], format: "%d. %B %Y %H:%M") : t("views.never") %></td>
     </tr>
     <% end %>
