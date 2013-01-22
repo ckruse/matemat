@@ -1,8 +1,10 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li class="nav-header">Bestellungen</li>
-    <% if @order %><li><%= link_to 'Pizza bestellen', new_order_item_path(@order) %></li>
-    <% else %><li><%= link_to 'Neue Bestellung', new_order_path %></li>
+    <% if @order and @order.order_id %>
+    <li><%= link_to t('views.order_pizza'), new_order_item_path(@order) %></li>
+    <% if current_user.user_id == @order.user_id and @order.open %><li><%= link_to 'Bestellung schliessen', close_order_path(@order) %></li><% end %>
+    <% else %><li><%= link_to t('views.new_order'), new_order_path %></li>
     <% end %>
   </ul>
 </div>

@@ -5,6 +5,19 @@ de:
   users:
     password_changed: Das Passwort wurde erfolgreich geändert!
 
+  orders:
+    successfully_created: Die Bestellung wurde erfolgreich erstellt.
+    successfully_updated: Die Bestellung wurde erfolgreich geändert.
+    successfully_deleted: Die Bestellung wurde erfolgreich gelöscht.
+    successfully_closed: Die Bestellung wurde erfolgreich abgeschlossen.
+    closing_not_allowed: Sie dürfen diese Bestellung nicht abschliessen!
+
+    pizzas:
+      successfully_created: Die Pizza-Bestellung wurde erfolgreich erstellt.
+      successfully_deleted: Die Pizza-Bestellung wurde erfolgreich gelöscht.
+      not_allowed_to_delete: Sie dürfen die Pizza-Bestellung nicht löschen!
+      paid: Die Pizza wurde erfolgreich auf bezahlt gesetzt.
+
   admin:
     users:
       successfully_created: Der Nutzer wurde erfolgreich erstellt!
@@ -19,6 +32,16 @@ de:
       successfully_created: Das Produkt wurde erfolgreich erstellt!
       successfully_updated: Das Produkt wurde erfolgreich geändert!
       successfully_deleted: Das Produkt wurde erfolgreich gelöscht!
+
+    pizzeria:
+      successfully_created: Die Pizzeria wurde erfolgreich erstellt.
+      successfully_updated: Die Pizzeria wurde erfolgreich geändert.
+      successfully_deleted: Die Pizzeria wurde erfolgreich gelöscht.
+
+      pizza:
+        successfully_created: Die Pizza wurde erfolgreich angelegt.
+        successfully_updated: Die Pizza wurde erfolgreich geändert.
+        successfully_deleted: Die Pizza wurde erfolgreich gelöscht.
 
 
   user_sessions:
@@ -65,6 +88,10 @@ de:
     password_confirm: Passwort-Bestätigung
     value: Betrag
     member: Club-Mitglied
+    create_pizzeria: Pizzeria anlegen
+    create_pizza: Pizza anlegen
+    new_order: Neue Bestellung
+    order_pizza: Pizza bestellen
 
 
   date:

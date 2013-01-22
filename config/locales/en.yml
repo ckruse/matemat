@@ -8,6 +8,19 @@ en:
   users:
     password_changed: Password has successfully been changed!
 
+  orders:
+    successfully_created: Order was successfully created.
+    successfully_updated: Order was successfully updated.
+    successfully_deleted: Order was successfully deleted.
+    successfully_closed: Order was successfully closed.
+    closing_not_allowed: You are not authorized to close this order!
+
+    pizzas:
+      successfully_created: Pizza order was successfully created.
+      successfully_deleted: Pizza order was successfully deleted.
+      not_allowed_to_delete: You are not authorized to delete this order item!
+      paid: Pizza has successfully been paid.
+
   admin:
     users:
       successfully_created: User has successfully been created!
@@ -22,6 +35,16 @@ en:
       successfully_created: Product has successfully been created!
       successfully_updated: Product has successfully been updated!
       successfully_deleted: Product has successfully been deleted!
+
+    pizzeria:
+      successfully_created: Pizzeria was successfully created.
+      successfully_updated: Pizzeria was successfully updated.
+      successfully_deleted: Pizzeria was successfully deleted.
+
+      pizza:
+        successfully_created: Pizza was successfully created.
+        successfully_updated: Pizza was successfully updated.
+        successfully_deleted: Pizza was successfully deleted.
 
   user_sessions:
     login_success: Successfully logged in!
@@ -67,6 +90,10 @@ en:
     password_confirm: Password confirmation
     value: Value
     member: Club member
+    create_pizzeria: Create Pizzeria
+    create_pizza: Create Pizza
+    new_order: New Order
+    order_pizza: Order Pizza
 
 
 # eof

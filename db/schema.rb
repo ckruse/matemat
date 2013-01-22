@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 6) do
   create_table "orders", :primary_key => "order_id", :force => true do |t|
     t.integer  "pizzeria_id",                   :null => false
     t.boolean  "open",        :default => true, :null => false
+    t.integer  "user_id",                       :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end

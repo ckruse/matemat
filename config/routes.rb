@@ -6,7 +6,9 @@ Matemat::Application.routes.draw do
 
   resources :orders do
     resources :items, except: [:index, :edit, :update, :show]
+    get ':id/paid' => 'items#set_paid', :as => :set_paid
   end
+  get 'orders/:id/close' => 'orders#close', :as => :close_order
 
   namespace :admin do
     resources :products

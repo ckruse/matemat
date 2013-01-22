@@ -11,14 +11,27 @@
   </thead>
 
   <tbody>
-  <% @order.order_positions.each do |p| %>
+  <% sum = 0; @order.order_positions.each do |op| sum += op.price %>
     <tr>
-      <td><%= o.name %></td>
-      <td><%= o.user.display_name %></td>
-      <td><%= o.price %></td>
-      <td><%= o.paid ? 'Ja' : 'Nein' %></td>
+      <td><%= op.name %></td>
+      <td><%= op.user.display_name %></td>
+      <td><%= sprintf("%.2f", op.price) %> CHF</td>
+      <td>
+        <%= op.paid ? 'Ja' : 'Nein' %>
+        <% if current_user.user_id == @order.user_id and !op.paid %><a href="<%= order_set_paid_path(@order, op) %>"><i class="icon icon-ok"> </i></a><% end %>
+        <% if current_user.user_id == op.user_id %>
+        <%= link_to order_item_path(@order, op), confirm: 'Sind Sie sicher?', method: :delete do %><i class="icon icon-trash"> </i><% end %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
   </tbody>
+
+  <tfoot>
+    <tr>
+      <th colspan="2">Summe:</th>
+      <td colspan="2"><%= sprintf("%.2f", sum) %> CHF</td>
+    </tr>
+  </tfoot>
 
 </table>
