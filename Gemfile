@@ -26,4 +26,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
+gem "paperclip"
+
 # eof
