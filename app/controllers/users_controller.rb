@@ -18,17 +18,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.includes(:account).find :all
-    bookings = Booking.
-      select('account_id, SUM(value) AS value, MAX(updated_at) AS last').where('account_id IN (SELECT account_id FROM accounts INNER JOIN users USING(user_id))').
-      group(:account_id)
-
-    @bookings = {}
-    @activities = {}
-    bookings.each do |b|
-      @bookings[b.account_id] = b.value
-      @activities[b.account_id] = DateTime.parse(b.last)
-    end
+    @users = User.find :all
   end
 
   def show
