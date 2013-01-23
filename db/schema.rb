@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "accounts", :primary_key => "account_id", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(:version => 6) do
   create_table "orders", :primary_key => "order_id", :force => true do |t|
     t.integer  "pizzeria_id",                   :null => false
     t.boolean  "open",        :default => true, :null => false
-    t.integer  "user_id",                       :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -79,6 +78,11 @@ ActiveRecord::Schema.define(:version => 6) do
     t.datetime "updated_at",                          :null => false
     t.boolean  "admin",            :default => false
     t.boolean  "is_member",        :default => true
+    t.datetime "last_login_at"
+    t.datetime "last_logout_at"
+    t.datetime "last_activity_at"
   end
+
+  add_index "users", ["last_logout_at", "last_activity_at"], :name => "index_users_on_last_logout_at_and_last_activity_at"
 
 end
