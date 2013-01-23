@@ -1,6 +1,37 @@
-<% content_for :body_class do %>patternlock<% end %><h1>Login <%= @user.display_name %></h1>
+<h1>Login <%= @user.display_name %></h1>
 
-<%= form_tag touch_login_url do %>
-<input type="hidden" name="username" value="<%= @user.username %>">
-<input type="password" name="password" class="patternlock">
+<%= form_tag touch_login_url, :class => 'form-horizontal' do %>
+  <input type="hidden" name="username" value="<%= @user.username %>">
+
+  <div class="control-group">
+    <label class="control-label" for="password">Passwort</label>
+    <div class="controls">
+      <input type="password" name="password" id="password">
+    </div>
+  </div>
+
+  <p class="form-actions">
+    <input type="submit" value="Login" class="btn btn-primary">
+  </p>
+
+  <div id="pattern-container">
+  </div>
 <% end %>
+
+<script>
+$('input[type=password]').closest(".control-group").css('display', 'none');
+$(".form-actions").css('display', 'none');
+
+$("#pattern-container").pattern({
+  arrowCorrectImage: '/img/arrow-correct.png',
+  arrowIncorrectImage: '/img/arrow-incorrect.png',
+  gridSize: 5,
+  stop: function(event, ui) {
+    var $input = $("input[type=password]");
+    $input.val(ui.pattern);
+    $input.closest("form").submit();
+
+    $('#pattern-container').pattern('clearPattern', true);
+  }
+});
+</script>

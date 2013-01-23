@@ -1,4 +1,4 @@
-<% content_for :body_class do %>patternlock<% end %><h1><%= t("views.change_password") %></h1>
+<h1><%= t("views.change_password") %></h1>
 
 <% @user.errors.full_messages.each do |msg| %>
 <div class="alert alert-error"><%= msg %></div>
@@ -6,9 +6,35 @@
 
 <%= form_for @user, html: {:class => 'form-horizontal'} do |t| %>
 
-<p>
-<%= password_field :user, :password, :class => 'patternlock' %>
-</p>
+  <div class="control-group">
+    <label class="control-label">Passwort:</label>
+    <div class="controls">
+      <%= password_field :user, :password, :class => 'patternlock' %>
+    </div>
+  </div>
 
+  <p class="form-actions">
+    <input type="submit" class="btn btn-primary" value="Speichern">
+  </p>
 
+  <div id="pattern-container">
+  </div>
 <% end %>
+
+<script>
+$('input[type=password]').closest(".control-group").css('display', 'none');
+$(".form-actions").css('display', 'none');
+
+$("#pattern-container").pattern({
+  arrowCorrectImage: '/img/arrow-correct.png',
+  arrowIncorrectImage: '/img/arrow-incorrect.png',
+  gridSize: 5,
+  stop: function(event, ui) {
+    var $input = $("input[type=password]");
+    $input.val(ui.pattern);
+    $input.closest("form").submit();
+
+    $('#pattern-container').pattern('clearPattern', true);
+  }
+});
+</script>
