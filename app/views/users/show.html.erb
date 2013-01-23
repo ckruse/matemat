@@ -1,6 +1,14 @@
 <h1><%= @user.display_name %></h1>
 
-<p><%= t("views.saldo") %>: <span id="account-sum"><%= sprintf("%.2f", @account.sum.to_f) %></span> CHF</p>
+<div class="row-fluid">
+  <div class="well pull-left">
+    <%= image_tag current_user.avatar.url('medium') %>
+  </div>
+
+  <div class="span9">
+    <p><%= t("views.saldo") %>: <span id="account-sum"><%= sprintf("%.2f", @account.sum.to_f) %></span> CHF</p>
+  </div>
+</div>
 
 <table class="table table-bordered table-striped">
   <thead>

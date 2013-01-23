@@ -4,12 +4,17 @@
 <div class="alert alert-error"><%= msg %></div>
 <% end %>
 
-<%= form_for @user, html: {:class => 'form-horizontal'} do |t| %>
+<%= form_for @user, html: {:class => 'form-horizontal'}, :multipart => true do |t| %>
+
+  <div class="control-group">
+    <%= t.label :avatar, 'Bild', :class => 'control-label' %>
+    <div class="controls"><%= t.file_field :avatar %></div>
+  </div>
 
   <div class="control-group">
     <label class="control-label">Passwort:</label>
     <div class="controls">
-      <%= password_field :user, :password, :class => 'patternlock' %>
+      <%= t.password_field :password %>
     </div>
   </div>
 

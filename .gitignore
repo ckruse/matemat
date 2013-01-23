@@ -15,3 +15,5 @@
 /tmp
 
 .dir-locals.el
+
+public/img/avatars

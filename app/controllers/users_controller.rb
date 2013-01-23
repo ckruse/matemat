@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     redirect_to(root_url, alert: I18n.t('authorize_first')) if current_user.blank? or current_user.user_id != @user.user_id
 
     @user.password = params[:user][:password]
+    @user.avatar = params[:user][:avatar] if params[:user][:avatar]
 
     respond_to do |format|
       if @user.save

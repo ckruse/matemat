@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :user_id, :username, :display_name,
     :email, :created_at, :updated_at, :password, :admin,
     :is_member, :password_confirmation, :last_login_at,
-    :last_logout_at, :last_activity_at
+    :last_logout_at, :last_activity_at, :avatar
 
   has_one :account, :dependent => :destroy
 
@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
 
   validates_presence_of :username
   validates_uniqueness_of :username
+
+  has_attached_file :avatar,
+    :styles => { :medium => "100x100>", :thumb => "50x50>" },
+    :path => ":rails_root/public/img/avatars/:attachment/:id/:style/:filename",
+    :url => "/img/avatars/:attachment/:id/:style/:filename"
 end
 
 # eof
