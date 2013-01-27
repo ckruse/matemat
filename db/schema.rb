@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 8) do
   create_table "orders", :primary_key => "order_id", :force => true do |t|
     t.integer  "pizzeria_id",                   :null => false
     t.boolean  "open",        :default => true, :null => false
+    t.integer  "user_id",                       :null => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -68,8 +69,7 @@ ActiveRecord::Schema.define(:version => 8) do
     t.datetime "updated_at",                                                :null => false
   end
 
-  create_table "users", :id => false, :force => true do |t|
-    t.integer  "user_id"
+  create_table "users", :primary_key => "user_id", :force => true do |t|
     t.string   "username",                               :null => false
     t.string   "display_name",                           :null => false
     t.string   "email",                                  :null => false
