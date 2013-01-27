@@ -11,7 +11,7 @@ function lockPattern(selector) {
   $(selector).pattern({
     arrowCorrectImage: '/img/arrow-correct.png',
     arrowIncorrectImage: '/img/arrow-incorrect.png',
-    gridSize: 5,
+    gridSize: 4,
     stop: function(event, ui) {
       var $input = $("input[type=password]");
 
