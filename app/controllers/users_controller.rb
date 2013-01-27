@@ -28,11 +28,18 @@ class UsersController < ApplicationController
     end
 
     @user = User.find params[:id]
+    @account = Account.find_by_user_id(@user.user_id) || Account.new
+
+    if @account.new_record?
+      @account.user_id = @user.user_id
+      @account.save!
+    end
+
     @account = Account.
       select('accounts.*, SUM(value) AS sum').
       joins('LEFT JOIN bookings USING(account_id)').
       group('accounts.account_id').
-      find_by_user_id(@user.user_id) || @account = Account.new
+      find_by_user_id(@user.user_id)
 
     @products = Product.
       select('products.*, count(bookings.booking_id) AS cnt').
