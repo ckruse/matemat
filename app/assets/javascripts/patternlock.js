@@ -1,11 +1,11 @@
 
 function lockPattern(selector) {
   var alphabet = [
-    '',  '0', 'a', '1', 'b',
-    '2', 'c', '3', 'd', '4',
-    'e', '5', 'f', '6', 'g',
-    '7', 'h', '8', 'i', '9',
-    'j', 'K', 'l', 'M', 'n', 'O'
+    '', '0', '1', '2', '3',
+    '4', '5', '6', '7', '8',
+    '9', 'a', 'b', 'c', 'd',
+    'e', 'f', 'g', 'h', 'i',
+    'j', 'k', 'l', 'm', 'n'
   ]
 
   $(selector).pattern({
@@ -15,11 +15,7 @@ function lockPattern(selector) {
     stop: function(event, ui) {
       var $input = $("input[type=password]");
 
-      var val = "";
-      for(var i = 0; i < ui.pattern.length; ++i) {
-        val += alphabet[ui.pattern[i]] + ",";
-      }
-
+      var val = ui.pattern.join("");
       $(selector).pattern('clearPattern', true);
 
       $input.val(val);
