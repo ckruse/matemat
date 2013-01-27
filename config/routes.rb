@@ -28,6 +28,11 @@ Matemat::Application.routes.draw do
 
   root to: 'users#index'
 
+  if Rails.env == 'production'
+    # default route to catch 404s
+    match '*a', :to => 'application#render_404'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
