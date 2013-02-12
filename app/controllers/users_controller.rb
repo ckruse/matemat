@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :require_login, only: [:edit, :update]
 
   def touch_login
-    @user = User.find params[:id]
+    @user = User.order('username').find params[:id]
   end
 
   def do_touch_login
