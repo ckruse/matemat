@@ -22,4 +22,21 @@ body {
   width:40%;
 }
 
+
+.tile {
+  @extend .well;
+  @extend .span3;
+
+  height: 200px;
+  box-sizing: border-box;
+  float: left;
+  margin-right:1%;
+
+  a {
+    display:block;
+    height:100%;
+  }
+}
+
+
 /* eof */
