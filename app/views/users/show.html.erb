@@ -15,8 +15,8 @@
   <div class="tile" data-product-id="<%= product.product_id %>">
     <%= link_to bookings_path(user_id: @user.user_id, product: product.product_id), :class => 'book' do %>
     <%= product.name %><br>
-    Preis intern: <span class="price-int" data-price="<%= product.price_int %>"><%= product.price_int %></span><br>
-    Preis extern: <span class="price-ext" data-price="<%= product.price_ext %>"><%= product.price_ext %></span><br>
+    Preis int: <span class="price-int" data-price="<%= product.price_int %>"><%= product.price_int %></span><br>
+    Preis ext: <span class="price-ext" data-price="<%= product.price_ext %>"><%= product.price_ext %></span><br>
     Anzahl: <span class="count"><%= product.cnt %></span>
   <% end %>
   </div>

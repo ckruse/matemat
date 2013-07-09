@@ -25,9 +25,9 @@ body {
 
 .tile {
   @extend .well;
-  @extend .span3;
+  @extend .span2;
 
-  height: 200px;
+  height: 170px;
   box-sizing: border-box;
   float: left;
   margin-right:1%;
